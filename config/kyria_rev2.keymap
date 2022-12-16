@@ -7,6 +7,13 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+// General Layout (keycodes)
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |  6  |  5  |  4  |  3  |  2  |  1  |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
+// |  12 |  11 |  10 |  9  |  8  |  7  |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+// |  20 |  19 |  18 |  17 |  16 |  15 |  14 |  13 |   | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
+//                   | 25  |  24 |  23 |  22 |  21 |   |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+
 / {
 	keymap {
 		compatible = "zmk,keymap";
