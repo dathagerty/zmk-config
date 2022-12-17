@@ -8,27 +8,27 @@
 #include <dt-bindings/zmk/keys.h>
 
 // General Layout (keycodes)
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  6  |  5  |  4  |  3  |  2  |  1  |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
-// |  12 |  11 |  10 |  9  |  8  |  7  |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// |  20 |  19 |  18 |  17 |  16 |  15 |  14 |  13 |   | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                   | 25  |  24 |  23 |  22 |  21 |   |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+// ------------------------------------------------------------------------------------------------------
+// |  6  |  5  |  4  |  3  |  2  |  1  |                            |  1  |  2  |  3  |  4  |  5  |  6  |
+// |  12 |  11 |  10 |  9  |  8  |  7  |                            |  7  |  8  |  9  | 10  | 11  | 12  |
+// |  20 |  19 |  18 |  17 |  16 |  15 |  14 |  13 |    | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  |
+//                   |  25 |  24 |  23 |  22 |  21 |    | 21  | 22  | 23  | 24  | 25  |
 
 / {
 	keymap {
 		compatible = "zmk,keymap";
 
 		default_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
 //                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
 			bindings = <
-	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
+	&kp ESC     &kp Q &kp W &kp E    &kp R   &kp T                                                   &kp Y   &kp U    &kp I     &kp O   &kp P    &kp BSLH
+	&kp TAB     &kp A &kp S &kp D    &kp F   &kp G                                                   &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+	&mt LSHFT ( &kp Z &kp X &kp C    &kp V   &kp B   &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT  &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	                        &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC          &kp RET   &kp SPACE  &kp TAB &kp BSPC &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
