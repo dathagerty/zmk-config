@@ -7,23 +7,112 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-// General Layout (keycodes)
+#define DEFAULT 0
+#define RAISE 1
+#define LOWER 2
+
+// General Layout - numbers reflect positon in matrix, for combos
 // ------------------------------------------------------------------------------------------------------
-// |  6  |  5  |  4  |  3  |  2  |  1  |                            |  1  |  2  |  3  |  4  |  5  |  6  |
-// |  12 |  11 |  10 |  9  |  8  |  7  |                            |  7  |  8  |  9  | 10  | 11  | 12  |
-// |  20 |  19 |  18 |  17 |  16 |  15 |  14 |  13 |    | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  |
-//                   |  25 |  24 |  23 |  22 |  21 |    | 21  | 22  | 23  | 24  | 25  |
+// |  0  |  1  |  2  |  3  |  4  |  5  |                            |  6  |  7  |  8  |  9  | 10  | 11  |
+// |  12 |  14 |  15 |  16 |  17 |  18 |                            | 19  | 20  | 21  | 22  | 23  | 23  |
+// |  24 |  25 |  26 |  27 |  29 |  29 |  30 |  -  |    |  -  | 33  | 34  | 35  | 36  | 37  | 38  | 39  |
+//                   |  -  |  41 |  42 |  43 |  44 |    | 45  | 46  | 47  | 48  |  -  |
 
 / {
+        combos {
+                compatible = "zmk,combos";
+                combo_esc {
+                        timeout-ms = <50>;
+                        key-positions = <2 3>;
+                        bindings = <&kp ESC>;
+                };
+                combo_del {
+                        timeout-ms = <50>;
+                        key-positions = <15 16>;
+                        bindings = <&kp DEL>;
+                };
+                combo_dash {
+                        timeout-ms = <50>;
+                        key-positions = <26 27>;
+                        bindings = <&kp DASH>;
+                };
+                combo_tab {
+                        timeout-ms = <50>;
+                        key-positions = <16 17>;
+                        bindings = <&kp TAB>;
+                };
+                combo_esc {
+                        timeout-ms = <50>;
+                        key-positions = <7 8>;
+                        bindings = <&kp ESC>;
+                };
+                combo_colon {
+                        timeout-ms = <50>;
+                        key-positions = <20 21>;
+                        bindings = <&kp COLON>;
+                };
+                combo_underscore {
+                        timeout-ms = <50>;
+                        key-positions = <35 36>;
+                        bindings = <&kp UNDERSCORE>;
+                };
+                combo_quote {
+                        timeout-ms = <50>;
+                        key-positions = <34 35>;
+                        bindings = <&kp SQT>;
+                };
+                combo_less_than {
+                        timeout-ms = <50>;
+                        key-positions = <2 3>;
+                        bindings = <&kp ESC>;
+                };
+                combo_greater_than {
+                        timeout-ms = <50>;
+                        key-positions = <2 3>;
+                        bindings = <&kp ESC>;
+                };
+        };
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_layer {
-// ----------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+                // ----------------------------------------------------------------------------------------------------------------------------------
+		// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
+		// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+		// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT |    -    |  |    -    | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
+		//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+		default_layer {			
+			bindings = <
+	&kp ESC     &kp Q &kp W &kp E    &kp R   &kp T                                                   &kp Y   &kp U    &kp I     &kp O   &kp P    &kp BSLH
+	&kp TAB     &kp A &kp S &kp D    &kp F   &kp G                                                   &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+	&mt LSHFT ( &kp Z &kp X &kp C    &kp V   &kp B   &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT  &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	                        &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC          &kp RET   &kp SPACE  &kp TAB &kp BSPC &kp RALT
+			>;
+
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+		};
+                
+                // ----------------------------------------------------------------------------------------------------------------------------------
+		// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
+		// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+		// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT |    -    |  |    -    | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
+		//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+                raise_layer {			
+			bindings = <
+	&kp ESC     &kp Q &kp W &kp E    &kp R   &kp T                                                   &kp Y   &kp U    &kp I     &kp O   &kp P    &kp BSLH
+	&kp TAB     &kp A &kp S &kp D    &kp F   &kp G                                                   &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+	&mt LSHFT ( &kp Z &kp X &kp C    &kp V   &kp B   &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT  &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	                        &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC          &kp RET   &kp SPACE  &kp TAB &kp BSPC &kp RALT
+			>;
+
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+		};
+		
+                // ----------------------------------------------------------------------------------------------------------------------------------
+		// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
+		// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+		// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT |    -    |  |    -    | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
+		//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+                lower_layer {			
 			bindings = <
 	&kp ESC     &kp Q &kp W &kp E    &kp R   &kp T                                                   &kp Y   &kp U    &kp I     &kp O   &kp P    &kp BSLH
 	&kp TAB     &kp A &kp S &kp D    &kp F   &kp G                                                   &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
