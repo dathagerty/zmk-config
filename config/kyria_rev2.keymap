@@ -94,14 +94,14 @@
                 
                 // ----------------------------------------------------------------------------------------------------------------------------------
 		// |   ESC   |  1  |  2  |  3  |   4   |   5   |                                          |   6   |  7    |  8  |  9   |   0   |     \   |
-		// |   TAB   |  :  |  =  |  {  |   }   |   `   |                                          |   H   |  J    |  K  |  L   |   ;   |     '   |
+		// |   TAB   |  :  |  =  |  {  |   }   |   `   |                                          |   ⬅️  |  ⬇️  |  ⬆️ |  ➡️   |   ;   |     '   |
 		// | SHIFT/( |  Z  |  X  |  [  |   ]   |   ~   |  L GUI  |    -    |  |    -    |  R GUI  |   N   |  M    |  ,  |  .   |   /   | SHIFT/) |
 		//                       |  -  | L ALT | RAISE |   RET   |  SPACE  |  |  SPACE  |  BSPC   | LOWER | HYPER |  -  |
                 raise_layer {			
 			bindings = <
-	&kp ESC        &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                        &kp N6    &kp N7               &kp N8    &kp N9  &kp N0   &kp BSLH
-	&mt LCTRL TAB  &kp COLON &kp EQUAL &kp LBRC  &kp RBRC  &kp GRAVE                                                     &kp H     &kp J                &kp K     &kp L   &kp SEMI &mt RCTRL SQT
-	&mt LSHFT LPAR &kp Z     &kp X     &kp LBKT  &kp RBKT  &kp TILDE &kp LGUI  &none              &none       &kp RGUI   &kp N     &kp M                &kp COMMA &kp DOT &kp FSLH &mt RSHFT RPAR
+	&kp ESC        &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                        &kp N6    &kp N7               &kp N8    &kp N9    &kp N0   &kp BSLH
+	&mt LCTRL TAB  &kp COLON &kp EQUAL &kp LBRC  &kp RBRC  &kp GRAVE                                                     &kp LEFT  &kp DOWN             &kp UP    &kp RIGHT &kp SEMI &mt RCTRL SQT
+	&mt LSHFT LPAR &kp Z     &kp X     &kp LBKT  &kp RBKT  &kp TILDE &kp LGUI  &none              &none       &kp RGUI   &kp N     &kp M                &kp COMMA &kp DOT   &kp FSLH &mt RSHFT RPAR
 	                                   &kp A     &kp LALT  &mo RAISE &kp RET   &kp SPACE          &kp SPACE   &kp BSPC   &mo LOWER &kp LS(LC(LA(LGUI))) &kp A
 			>;
 
