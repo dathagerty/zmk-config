@@ -54,10 +54,10 @@
 
         default_layer {
             bindings = <
-&kp ESC         &kp Q  &kp W  &kp E  &kp R     &kp T                                                &kp Y      &kp U                 &kp I      &kp O    &kp P     &kp BSLH
-&mt LCTRL TAB   &kp A  &kp S  &kp D  &kp F     &kp G                                                &kp H      &kp J                 &kp K      &kp L    &kp SEMI  &kp SQT
-&mt LSHFT LPAR  &kp Z  &kp X  &kp C  &kp V     &kp B      &kp LGUI  &none      &none      &kp RGUI  &kp N      &kp M                 &kp COMMA  &kp DOT  &kp FSLH  &mt RSHFT RPAR
-                              &kp A  &kp LALT  &mo RAISE  &kp RET   &kp SPACE  &kp SPACE  &kp BSPC  &mo LOWER  &kp LS(LC(LA(LGUI)))  &kp A
+&kp ESC         &kp Q             &kp W         &kp E          &kp R          &kp T                                                &kp Y      &kp U                 &kp I          &kp O         &kp P            &kp BSLH
+&mt LCTRL TAB   &u_mt LEFT_GUI A  &u_mt LALT S  &u_mt LCTRL D  &u_mt LSHFT F  &kp G                                                &kp H      &u_mt RSHFT J         &u_mt RCTRL K  &u_mt RALT L  &u_mt RGUI SEMI  &kp SQT
+&mt LSHFT LPAR  &kp Z             &kp X         &kp C          &kp V          &kp B      &kp LGUI  &none      &none      &kp RGUI  &kp N      &kp M                 &kp COMMA      &kp DOT       &kp FSLH         &mt RSHFT RPAR
+                                                &kp A          &kp LALT       &mo RAISE  &kp RET   &kp SPACE  &kp SPACE  &kp BSPC  &mo LOWER  &kp LS(LC(LA(LGUI)))  &kp A
             >;
 
             sensor-bindings =
