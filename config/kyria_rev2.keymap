@@ -40,6 +40,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        u_td: u_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "U_TD";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&to 0>;
+        };
     };
 
     keymap {
@@ -79,7 +86,7 @@
 
         tap {
             bindings = <
-&kp TAB                      &kp Q  &kp W  &kp E            &kp R       &kp T                                                          &kp Y          &kp U       &kp I        &kp O    &kp P     &kp BACKSLASH
+&to 0                        &kp Q  &kp W  &kp E            &kp R       &kp T                                                          &kp Y          &kp U       &kp I        &kp O    &kp P     &kp BACKSLASH
 &kp ESC                      &kp A  &kp S  &kp D            &kp F       &kp G                                                          &kp H          &kp J       &kp K        &kp L    &kp SEMI  &kp SQT
 &mt LSHIFT LEFT_PARENTHESIS  &kp Z  &kp X  &kp C            &kp V       &kp B      &kp LS(LA(LC(LGUI)))  &kp SPACE  &kp RET  &kp RGUI  &kp N          &kp M       &kp COMMA    &kp DOT  &kp FSLH  &mt RSHFT RIGHT_PARENTHESIS
                                            &kp C_VOLUME_UP  &kp ESCAPE  &kp SPACE  &kp TAB               &kp SPACE  &kp RET  &kp RET   &kp BACKSPACE  &kp DELETE  &kp PAGE_UP
