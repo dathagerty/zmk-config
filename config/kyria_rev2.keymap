@@ -30,10 +30,12 @@
             compatible = "zmk,behavior-hold-tap";
             label = "U_MT";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
 
             tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
         };
 
         u_lt: u_lt {
@@ -43,6 +45,9 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
         };
 
         u_bg: u_bg {
