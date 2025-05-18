@@ -24,7 +24,14 @@
 //                   |  -  |  41 |  42 |  43 |  44 |    | 45  | 46  | 47  | 48  |  -  |
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        both-shift-caps-word {
+            bindings = <&caps_word>;
+            key-positions = <24 39>;
+        };
+    };
 
     behaviors {
         u_mt: u_mt {
